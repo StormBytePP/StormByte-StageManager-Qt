@@ -6,8 +6,7 @@
 
 namespace StageManager::ui {
     class SystemTrayMenu;
-    class SystemTray : public QSystemTrayIcon
-    {
+    class SystemTray: public QSystemTrayIcon {
         Q_OBJECT
         public:
             SystemTray();

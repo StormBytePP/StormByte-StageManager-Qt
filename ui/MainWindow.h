@@ -9,8 +9,7 @@ QT_END_NAMESPACE
 
 namespace StageManager::ui {
     class SystemTray;
-    class MainWindow : public QMainWindow
-    {
+    class MainWindow: public QMainWindow {
         Q_OBJECT
         private:
             Ui::StageManager *ui;
