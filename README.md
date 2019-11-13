@@ -1,0 +1,1 @@
+# StormByte-StageManager-Qt
