@@ -1,5 +1,7 @@
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
+include_directories(../lib)
+
 add_executable(StageManager
   main.cpp
   MainWindow.cpp

@@ -5,6 +5,8 @@
 StageManager::ui::MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::StageManager) {
     ui->setupUi(this);
     tray = new SystemTray();
+
+    //connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(handleButton()));
 }
 
 StageManager::ui::MainWindow::~MainWindow() {
@@ -12,3 +14,6 @@ StageManager::ui::MainWindow::~MainWindow() {
     delete tray;
 }
 
+void StageManager::ui::MainWindow::handleButton() {
+
+}

@@ -15,6 +15,8 @@ namespace StageManager::ui {
             Ui::StageManager *ui;
             SystemTray *tray;
 
+        private slots:
+            void handleButton();
 
         public:
             MainWindow(QWidget *parent = nullptr);
