@@ -1,5 +1,4 @@
-#ifndef STAGEMANAGERTRAY_H
-#define STAGEMANAGERTRAY_H
+#pragma once
 
 #include <QSystemTrayIcon>
 
@@ -16,5 +15,3 @@ namespace StageManager::ui {
             SystemTrayMenu *m_menu;
     };
 }
-
-#endif // STAGEMANAGERTRAY_H

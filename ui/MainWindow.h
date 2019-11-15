@@ -1,7 +1,7 @@
-#ifndef STAGEMANAGER_MAIN_WINDOW_H
-#define STAGEMANAGER_MAIN_WINDOW_H
+#pragma once
 
 #include <QMainWindow>
+#include "system/Compress.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class StageManager; }
@@ -17,6 +17,7 @@ namespace StageManager::ui {
 
         private slots:
             void handleButton();
+            void eventDone(bool result);
 
         public:
             MainWindow(QWidget *parent = nullptr);
@@ -24,4 +25,3 @@ namespace StageManager::ui {
 
     };
 }
-#endif // STAGEMANAGER_MAIN_WINDOW_H

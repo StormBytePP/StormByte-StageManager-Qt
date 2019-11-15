@@ -1,5 +1,4 @@
-#ifndef STAGEMANAGERTRAYMENU_H
-#define STAGEMANAGERTRAYMENU_H
+#pragma once
 
 #include <QMenu>
 
@@ -11,5 +10,3 @@ namespace StageManager::ui {
             virtual ~SystemTrayMenu();
     };
 }
-
-#endif // STAGEMANAGERTRAYMENU_H

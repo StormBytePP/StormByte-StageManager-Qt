@@ -25,8 +25,8 @@ namespace StageManager::lib {
             bool mkdir(const std::string& path);
             void copy(const std::string& source, const std::string& destination);
             bool rm(const std::string& source);
-            bool compress(const std::string& source, const File& destination);
-            bool uncompress(const File& file, const std::string& destination);
+            bool compress(const std::string& source, const std::string& file);
+            bool uncompress(const std::string& file, const std::string& destination);
             const std::string get_filesystem_string(const FileSystem& fs) const;
             bool mount(const std::filesystem::path &source, const std::filesystem::path &destination, const FileSystem &fs, const unsigned long &flags);
     };

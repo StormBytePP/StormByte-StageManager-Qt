@@ -1,6 +1,8 @@
 #include "Linux.h"
 #include "System.h"
 #include <iostream>
+#include <archive.h>
+#include <archive_entry.h>
 
 StageManager::lib::Linux::Linux(const std::string& base): m_base(base) {
 }
@@ -77,4 +79,8 @@ const std::string StageManager::lib::Linux::get_filesystem_string(const FileSyst
 
 bool StageManager::lib::Linux::mount(const std::filesystem::path &source, const std::filesystem::path &destination, const FileSystem &fs, const unsigned long &flags) {
     return StageManager::lib::System::mount(source.c_str(), destination.c_str(), get_filesystem_string(fs).c_str(), flags, nullptr) == 0;
+}
+
+bool StageManager::lib::Linux::uncompress(const std::string &file, const std::string &destination) {
+
 }

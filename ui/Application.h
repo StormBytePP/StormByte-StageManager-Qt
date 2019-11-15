@@ -1,5 +1,4 @@
-#ifndef STAGEMANAGERAPP_H
-#define STAGEMANAGERAPP_H
+#pragma once
 
 #include <QApplication>
 
@@ -16,5 +15,3 @@ namespace StageManager::ui {
 
     };
 }
-
-#endif // STAGEMANAGERAPP_H
