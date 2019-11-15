@@ -23,47 +23,30 @@ StageManager::system::CompressionType StageManager::system::CompressionAction::g
 }
 
 const QStringList StageManager::system::CompressionAction::get_tar_command_arguments() const {
-    QStringList commands = get_tar_compression_arguments();
-    commands.push_back("-cpf");
-    commands.push_back(QString::fromStdString(m_file.string()));
-
-    commands.push_back("-C");
-    commands.push_back(QString::fromStdString(m_folder.string()));
-    commands.push_back(".");
-    return commands;
+    return get_tar_compression_arguments() << "-cpf" << m_file.c_str() << "-C" << m_folder.c_str() << ".";
 }
 
 const QStringList StageManager::system::CompressionAction::get_untar_command_arguments() const {
-    QStringList commands = get_tar_compression_arguments();
-    commands.push_back("-xpf");
-    commands.push_back(QString::fromStdString(m_file.string()));
-
-    commands.push_back("-C");
-    commands.push_back(QString::fromStdString(m_folder.string()));
-    return commands;
+    return get_tar_compression_arguments() << "-xpf" << m_file.c_str() << "-C" << m_folder.c_str();
 }
 
 QStringList StageManager::system::CompressionAction::get_tar_compression_arguments() const {
     QStringList commands;
     switch(get_compression_type()) {
         case BZIP2:
-            commands.push_back("-I");
-            commands.push_back("pbzip2 -9");
+            commands << "-I" << "pbzip2 -9";
             break;
 
         case GZIP:
-            commands.push_back("-I");
-            commands.push_back("pigz -9");
+            commands << "-I" << "pigz -9";
             break;
 
         case XZ:
-            commands.push_back("-I");
-            commands.push_back("pxz -9eT0");
+            commands << "-I" << "pxz -9eT0";
             break;
 
         case ZSTD:
-            commands.push_back("-I");
-            commands.push_back("pzstd -9 -q");
+            commands << "-I" << "pzstd -9 -q";
             break;
 
         case NONE:
