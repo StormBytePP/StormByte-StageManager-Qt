@@ -24,6 +24,9 @@ add_executable(StageManager
       ui/SystemTrayMenu.h
       ui/Application.cpp
       ui/Application.h
+      ui/SettingsWindow.cpp
+      ui/SettingsWindow.h
+      ui/SettingsWindow.ui
       system/Action.h
       system/Action.cpp
       system/Mount.h
@@ -42,6 +45,8 @@ add_executable(StageManager
       system/Compress.h
       system/Uncompress.cpp
       system/Uncompress.h
+      system/Settings.cpp
+      system/Settings.h
 )
 
 target_link_libraries(StageManager PRIVATE Qt5::Widgets)

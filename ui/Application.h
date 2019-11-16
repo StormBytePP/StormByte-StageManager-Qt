@@ -12,6 +12,5 @@ namespace StageManager::ui {
 
         private:
             MainWindow *m_main_window;
-
     };
 }

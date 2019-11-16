@@ -1,5 +1,6 @@
 #include <QStyle>
 #include <QDesktopWidget>
+#include <QSettings>
 
 #include "Application.h"
 #include "MainWindow.h"
@@ -15,6 +16,7 @@ StageManager::ui::Application::Application(int &argc, char *argv[]): QApplicatio
         )
     );
     m_main_window->show();
+
 }
 
 StageManager::ui::Application::~Application() {

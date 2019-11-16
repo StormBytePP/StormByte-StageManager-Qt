@@ -1,35 +1,33 @@
 #include "MainWindow.h"
 #include "SystemTray.h"
+#include "SettingsWindow.h"
 #include "./ui_MainWindow.h"
-#include <iostream>
-#include "system/Compress.h"
+#include "system/Settings.h"
 
-StageManager::ui::MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::StageManager) {
-    ui->setupUi(this);
-    tray = new SystemTray();
+StageManager::ui::MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), m_ui(new Ui::StageManager) {
+    m_ui->setupUi(this);
+    m_tray = new SystemTray();
+    m_settings = new SettingsWindow();
 
-    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(handleButton()));
+    connect(m_ui->configurationButton, SIGNAL(clicked()), this, SLOT(configurationButtonClicked()));
     /*
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(handleButton()));
     connect(m_uncompress, SIGNAL(done(bool)), this, SLOT(eventDone(bool)));
     connect(m_uncompress, SIGNAL(progress(int)), this, SLOT(eventProgress(int)));
     */
 }
 
 StageManager::ui::MainWindow::~MainWindow() {
-    delete ui;
-    delete tray;
+    delete m_ui;
+    delete m_tray;
+    delete m_settings;
 }
 
-void StageManager::ui::MainWindow::handleButton() {
-    ui->pushButton->setText("Please wait...");
-    ui->pushButton->setEnabled(false);
+void StageManager::ui::MainWindow::show() {
+    if (!m_settings->getSettings()->valid()) m_settings->show();
+    QMainWindow::show();
 }
 
-void StageManager::ui::MainWindow::eventDone(bool result) {
-    if (result)
-        ui->pushButton->setText("DONE OK");
-    else
-        ui->pushButton->setText("ERROR UNCOMPRESSING");
-
-    ui->pushButton->setEnabled(true);
+void StageManager::ui::MainWindow::configurationButtonClicked() {
+    m_settings->show();
 }
