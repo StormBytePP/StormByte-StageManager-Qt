@@ -13,11 +13,13 @@ namespace StageManager::ui {
         Q_OBJECT
         public:
             MainWindow(QWidget *parent = nullptr);
-            ~MainWindow();
+            ~MainWindow() override;
             void show();
+            void closeEvent(QCloseEvent *event) override;
 
         private slots:
             void configurationButtonClicked();
+            void addStageTabButtonClicked();
 
         private:
             Ui::StageManager *m_ui;

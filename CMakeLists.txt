@@ -27,6 +27,11 @@ add_executable(StageManager
       ui/SettingsWindow.cpp
       ui/SettingsWindow.h
       ui/SettingsWindow.ui
+      ui/ProcessTabWidget.cpp
+      ui/ProcessTabWidget.h
+      ui/ProcessWidget.cpp
+      ui/ProcessWidget.h
+      ui/ProcessWidget.ui
       system/Action.h
       system/Action.cpp
       system/Mount.h

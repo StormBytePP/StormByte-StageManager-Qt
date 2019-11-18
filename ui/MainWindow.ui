@@ -14,7 +14,7 @@
    <string>StageManager</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="StageManager::ui::ProcessTabWidget" name="stageTabWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -27,18 +27,31 @@
      <number>-1</number>
     </property>
    </widget>
-   <widget class="QPushButton" name="configurationButton">
+   <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>500</y>
-      <width>121</width>
-      <height>21</height>
+      <width>781</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Configuration</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="addStageTabButton">
+       <property name="text">
+        <string>AddTab</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="configurationButton">
+       <property name="text">
+        <string>Configuration</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -58,6 +71,14 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>StageManager::ui::ProcessTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header location="global">../ui/ProcessTabWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
